@@ -1,0 +1,234 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background-color: #fff;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.5;
+    transition: background-color 0.5s;
+}
+
+/* Body Hover Effect */
+body:hover {
+    background-color: #ffcc00; /* Change background color on hover */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #ff6600;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+nav:hover {
+    transform: skewX(15deg); /* Skew the entire nav on hover */
+    background-color: #ff3300; /* Change color drastically */
+}
+
+/* Navigation List */
+nav ul {
+    list-style-type: none;
+    font-size: 18px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+    transition: color 0.2s, transform 0.3s, font-size 0.3s;
+}
+
+/* Hover effects for list items */
+nav ul li:hover {
+    color: #ffffff;
+    transform: rotate(180deg); /* Flip each list item */
+    font-size: 24px; /* Increase font size */
+}
+
+/* Links in Nav */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: text-shadow 0.3s, transform 0.2s;
+}
+
+/* Hover effect for nav links */
+nav ul li a:hover {
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5); /* Add shadow on hover */
+    transform: scale(0.8); /* Zoom out instead of in */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 40px;
+    background-color: #0099cc;
+    color: white;
+    transition: transform 0.3s, background-color 0.5s;
+}
+
+/* Header hover */
+header:hover {
+    background-color: #006699;
+    transform: rotate(10deg); /* Tilt the header */
+}
+
+/* Header Title */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    transition: color 0.2s, text-transform 0.3s;
+}
+
+/* Header hover effect */
+header h1:hover {
+    color: #ffcc00;
+    text-transform: uppercase; /* Force uppercase letters */
+}
+
+/* Header Subtitle */
+header h2 {
+    font-size: 1.5rem;
+    color: white;
+    transition: transform 0.4s, color 0.3s;
+}
+
+header h2:hover {
+    color: #ff0000;
+    transform: translateY(10px); /* Move the subtitle downward */
+}
+
+/* Main Body */
+#main-body {
+    padding: 20px;
+    transition: background-color 0.5s;
+}
+
+/* Main body hover effect */
+#main-body:hover {
+    background-color: #e0e0e0;
+}
+
+/* Section Titles */
+main h3 {
+    font-size: 2rem;
+    color: #ff3333;
+    margin-bottom: 15px;
+    transition: transform 0.3s, color 0.3s, font-size 0.3s;
+}
+
+main h3:hover {
+    transform: rotate(10deg); /* Rotate the heading */
+    color: #00ccff; /* Change color to light blue */
+    font-size: 2.5rem; /* Increase font size */
+}
+
+/* Main Paragraphs */
+main p {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 20px;
+    transition: transform 0.3s, color 0.2s;
+}
+
+main p:hover {
+    transform: scale(0.9); /* Zoom out instead of in */
+    color: #ff9900; /* Change color to orange */
+}
+
+/* Articles */
+article {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: transform 0.4s, background-color 0.4s;
+}
+
+article:hover {
+    background-color: #f4f4f4; /* Lighter background on hover */
+    transform: rotate(-5deg); /* Rotate slightly */
+}
+
+/* Article Titles */
+article h4 {
+    font-size: 2rem;
+    color: #0099cc;
+    margin-bottom: 10px;
+    transition: transform 0.3s, color 0.4s;
+}
+
+article h4:hover {
+    color: #ff3300; /* Red on hover */
+    transform: scale(0.8); /* Zoom out instead of in */
+}
+
+/* Paragraphs in Articles */
+article p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 20px;
+    transition: color 0.2s, text-transform 0.2s;
+}
+
+article p:hover {
+    color: #00cc99; /* Change text to green */
+    text-transform: uppercase; /* Uppercase text on hover */
+}
+
+/* Images in Articles */
+article img {
+    width: 40%;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+/* Hover effect for images */
+article img:hover {
+    transform: scale(0.95); /* Zoom out instead of in */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s, background-color 0.4s;
+}
+
+footer:hover {
+    background-color: #666;
+    transform: rotate(5deg); /* Rotate footer on hover */
+}
+
+/* Footer Text */
+footer p {
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.2s;
+}
+
+footer p:hover {
+    color: #ffcc00; /* Change text to yellow */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Final Random Hover Effects on All Elements */
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect for everything */
+*:hover {
+    transform: scale(0.95); /* Zoom out instead of in */
+    background-color: rgba(255, 0, 0, 0.2); /* Add red background */
+    color: #ff0099; /* Change text color to pink */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Box-shadow effect */
+}

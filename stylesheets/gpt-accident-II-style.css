@@ -1,0 +1,172 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    background-color: #f0f0f0; /* Pale grayish background that's boring */
+    font-family: 'Comic Sans MS', sans-serif; /* The ultimate beginner's faux pas */
+    color: #333; /* Dark text on a light gray background, which is acceptable but unexciting */
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #ffcc00; /* Awful, bright yellow */
+    padding: 25px;
+    text-align: center; /* Centered but doesn't really feel right */
+}
+
+nav ul {
+    list-style-type: square;
+    font-size: 18px;
+    margin-left: 30px;
+    margin-right: 30px; /* Symmetrical, but unnecessary and awkward */
+}
+
+nav ul li {
+    margin-bottom: 20px; /* Too much space, making the navbar look like it’s floating */
+}
+
+nav ul li a {
+    color: #6600cc; /* Purple links on yellow background — a horrible combination */
+    text-decoration: none;
+    text-transform: uppercase; /* Unnecessary uppercase for links */
+}
+
+nav ul li a:hover {
+    color: #ff0000; /* Red hover color that clashes harshly with everything */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-top: 80px; /* So much space above the header, it feels like it’s stuck in the corner */
+}
+
+header h1 {
+    font-size: 5rem; /* Ridiculously large, even for a main title */
+    color: #00ccff; /* Bright cyan text, definitely not easy on the eyes */
+    margin-bottom: 25px; /* Huge gap before the subtitle */
+    font-family: 'Arial Black', sans-serif; /* Trying too hard to look bold and modern */
+    text-transform: uppercase; /* Uppercase here is just overkill */
+}
+
+header h2 {
+    font-size: 1rem; /* Way too small for a subtitle */
+    color: #666; /* Dull gray that doesn’t contrast enough with the background */
+    line-height: 1.3; /* Barely enough space between lines */
+}
+
+/* Main Body Styling */
+#main-body {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px 5px; /* Odd padding making the text feel cramped */
+}
+
+/* Main Section Titles */
+main h3 {
+    font-size: 3.5rem; /* Unnecessarily large heading, competing with the main title */
+    margin-bottom: 50px; /* Stupidly large space under the heading */
+    text-align: left; /* Misaligned — doesn’t match the centered header */
+    color: #ff00ff; /* Neon pink title on the page... not okay */
+}
+
+/* Paragraph Styles */
+main p {
+    font-size: 1.2rem;
+    margin-bottom: 25px; /* More vertical spacing than necessary */
+    text-align: justify; /* Justify makes the paragraph feel uneven */
+}
+
+/* Article Styles */
+article {
+    background-color: #ffb3b3; /* Light pink — clashing with everything else */
+    border: 3px solid #6600cc; /* Purple border, even though it doesn't work */
+    padding: 20px;
+    margin-bottom: 60px; /* Uncomfortable space between articles */
+    transform: rotate(3deg); /* Slight tilt, for no reason at all */
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3); /* Heavy shadow that looks amateurish */
+}
+
+article h4 {
+    font-size: 2.5rem; /* Way too big for a subheading */
+    color: #0000ff; /* Bright blue, feels unnatural here */
+    margin-bottom: 5px;
+    text-transform: uppercase; /* Again, uppercase overkill */
+}
+
+article p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: #ff0066; /* Neon pink text in a paragraph — headache inducing */
+}
+
+article img {
+    width: 120%; /* Image stretched beyond normal width — gives the page a distorted look */
+    height: auto;
+    border: 10px dotted #0000ff; /* Dotted blue border, completely random */
+    margin-top: 40px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #00ffcc; /* A harsh cyan that clashes badly with everything */
+    color: #ff0000; /* Red text on cyan — unbearable to read */
+    padding: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-top: 5px solid #ffcc00; /* Another over-the-top yellow border */
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1.2rem;
+    font-weight: bold; /* Completely unnecessary bold text */
+}
+
+/* Additional Random Mistakes */
+h1, h2, h3, h4, p {
+    font-size: 1.5rem; /* All text sizes randomly set to 1.5rem, making no sense */
+    color: #0000cc; /* Consistent blue color for everything, but it doesn't go together */
+    margin-bottom: 15px; /* Random margin bottom making everything feel overly spaced */
+}
+
+/* Ridiculous Excess Padding & Margins */
+h1 {
+    margin-top: 120px; /* So much space that the header looks disconnected from everything else */
+}
+
+/* Let's make it even worse on mobile */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 3rem; /* Slightly smaller on mobile, but still way too big */
+    }
+
+    header h2 {
+        font-size: 1.2rem; /* Way too small to read easily */
+    }
+
+    main h3 {
+        font-size: 2.5rem; /* Mobile heading still huge */
+    }
+
+    main p {
+        font-size: 1.1rem; /* Only a little smaller, still too large */
+    }
+
+    article {
+        margin-bottom: 30px; /* Still way too much space between articles */
+    }
+
+    nav ul {
+        padding-left: 10px; /* Making things awkwardly tight */
+    }
+
+    nav ul li {
+        margin-bottom: 10px; /* Awkward spacing between links */
+    }
+}
