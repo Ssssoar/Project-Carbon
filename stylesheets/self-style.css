@@ -57,7 +57,7 @@ main{
 
 article{
     float: left;
-    border: solid 1px;
+    border: solid 1px black;
     border-radius: 5px;
     width: 30%;
     margin: 1% 1.5% 1% 1.5%;
@@ -68,7 +68,7 @@ article{
 
 article img{
     border-radius: 10px;
-    width: 100%;
+    width: 95%;
     height: 100px;
     opacity: 0.0;
     transition: 0.1s;
