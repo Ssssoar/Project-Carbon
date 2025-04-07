@@ -52,7 +52,10 @@ h3{
 }
 
 main{
-    overflow: hidden
+    overflow: hidden;
+    font-size: 20px;
+    padding-left: 10px;
+    font-family: Copperplate, Helvetica, Verdana, Fantasy;
 }
 
 article{
@@ -64,6 +67,14 @@ article{
     text-align: center;
     color: rgba(0,0,0,0);
     transition: 0.1s;
+    background-size: 100%;
+    transition: 0.1s;
+}
+
+article:hover{
+    background-image: none;
+    color: black;
+    transition: 0.5s;
 }
 
 article img{
@@ -79,17 +90,52 @@ article:hover img{
     opacity: 1.0
 }
 
-
-#game1{
+#game1:not(#game1:hover){
     background-image: url("../imgs/tester.jpg");
-    background-size: 100%;
-    transition: 0.1s;
 }
 
-#game1:hover{
-    background-image: none;
-    color: black;
-    transition: 0.5s;
+#game2:not(#game2:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game3:not(#game3:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game4:not(#game4:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game5:not(#game5:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game6:not(#game6:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game7:not(#game7:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game8:not(#game8:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game9:not(#game9:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game10:not(#game10:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game11:not(#game11:hover){
+    background-image: url("../imgs/tester.jpg");
+}
+
+#game12:not(#game12:hover){
+    background-image: url("../imgs/tester.jpg");
 }
 
 footer{
