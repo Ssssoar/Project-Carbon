@@ -5,7 +5,7 @@ body{
 
 nav{
     width: 15%;
-    margin-top: 50px;
+    margin-top: 300px;
     float: left;
     border: solid 2px;
     border-radius: 20px;
@@ -63,16 +63,19 @@ article{
     margin: 1% 1.5% 1% 1.5%;
     text-align: center;
     color: rgba(0,0,0,0);
+    transition: 0.1s;
 }
 
 article img{
     border-radius: 10px;
     width: 100%;
     height: 100px;
-    opacity: 0.0
+    opacity: 0.0;
+    transition: 0.1s;
 }
 
 article:hover img{
+    transition: 0.5s;
     opacity: 1.0
 }
 
@@ -80,11 +83,13 @@ article:hover img{
 #game1{
     background-image: url("../imgs/tester.jpg");
     background-size: 100%;
+    transition: 0.1s;
 }
 
 #game1:hover{
     background-image: none;
     color: black;
+    transition: 0.5s;
 }
 
 footer{
