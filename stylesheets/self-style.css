@@ -42,7 +42,12 @@ h2{
 h3{
     text-align: center;
     font-family: Copperplate, Helvetica, Verdana, Fantasy;
-    font-size: 35px
+    font-size: 50px
+}
+
+h4{
+    font-size: 30px;
+    margin-bottom: 5px;
 }
 
 .clearfix::after {
@@ -66,9 +71,16 @@ article{
     margin: 1% 1.5% 1% 1.5%;
     text-align: center;
     color: rgba(0,0,0,0);
-    transition: 0.1s;
-    background-size: 100%;
-    transition: 0.1s;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: 0.25s;
+}
+
+article p{
+    font-size: 15px;
+    margin: 15px;
+    text-align: justify;
 }
 
 article:hover{
@@ -80,7 +92,6 @@ article:hover{
 article img{
     border-radius: 10px;
     width: 95%;
-    height: 100px;
     opacity: 0.0;
     transition: 0.1s;
 }
@@ -91,51 +102,51 @@ article:hover img{
 }
 
 #game1:not(#game1:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/KuriKuri.png");
 }
 
 #game2:not(#game2:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/Topsi.png");
 }
 
 #game3:not(#game3:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/DESTROYRED.png");
 }
 
 #game4:not(#game4:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/BosseBoll.png");
 }
 
 #game5:not(#game5:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/OfEndlessCreativity.png");
 }
 
 #game6:not(#game6:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/PrimeCut.png");
 }
 
 #game7:not(#game7:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/Fuga.png");
 }
 
 #game8:not(#game8:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/BulletHeaven.png");
 }
 
 #game9:not(#game9:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/BAM.png");
 }
 
 #game10:not(#game10:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/GarbageDay.png");
 }
 
 #game11:not(#game11:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/ShaonjiKick.png");
 }
 
 #game12:not(#game12:hover){
-    background-image: url("../imgs/tester.jpg");
+    background-image: url("../imgs/thumbnails/NoLight.png");
 }
 
 footer{
