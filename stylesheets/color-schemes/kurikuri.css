@@ -54,6 +54,12 @@ footer{
 
 article{
     border-color: black;
+    background-color: white;
+}
+
+article:hover a{
+    color: black;
+    border-color: #c75401;
     background-color: #FC9341;
 }
 

@@ -48,6 +48,7 @@ h3{
 h4{
     font-size: 30px;
     margin-bottom: 5px;
+    margin-top: 15px
 }
 
 .clearfix::after {
@@ -66,7 +67,8 @@ main{
 
 article{
     float: left;
-    border: solid 1px black;
+    border-style: solid;
+    border-width:  2px;
     border-radius: 5px;
     width: 30%;
     margin: 1% 1.5% 1% 1.5%;
@@ -80,7 +82,10 @@ article{
 
 article p{
     font-size: 15px;
-    margin: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
     text-align: justify;
 }
 
@@ -99,6 +104,7 @@ article img{
     border-radius: 10px;
     width: 95%;
     opacity: 0.0;
+    margin-top: 20px;
     transition: 0.1s;
 }
 
@@ -108,8 +114,14 @@ article:hover img{
 }
 
 article:hover a{
+    text-decoration-line: none;
     transition: 0.5s;
-    opacity: 1.0
+    opacity: 1.0;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 100px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px
 }
 
 #game1:not(#game1:hover){
