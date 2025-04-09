@@ -125,51 +125,51 @@ article:hover a{
 }
 
 #game1:not(#game1:hover){
-    background-image: url("../imgs/thumbnails/KuriKuri.png");
+    background-image: url("../assets/thumbnails/KuriKuri.png");
 }
 
 #game2:not(#game2:hover){
-    background-image: url("../imgs/thumbnails/Topsi.png");
+    background-image: url("../assets/thumbnails/Topsi.png");
 }
 
 #game3:not(#game3:hover){
-    background-image: url("../imgs/thumbnails/DESTROYRED.png");
+    background-image: url("../assets/thumbnails/DESTROYRED.png");
 }
 
 #game4:not(#game4:hover){
-    background-image: url("../imgs/thumbnails/BosseBoll.png");
+    background-image: url("../assets/thumbnails/BosseBoll.png");
 }
 
 #game5:not(#game5:hover){
-    background-image: url("../imgs/thumbnails/OfEndlessCreativity.png");
+    background-image: url("../assets/thumbnails/OfEndlessCreativity.png");
 }
 
 #game6:not(#game6:hover){
-    background-image: url("../imgs/thumbnails/PrimeCut.png");
+    background-image: url("../assets/thumbnails/PrimeCut.png");
 }
 
 #game7:not(#game7:hover){
-    background-image: url("../imgs/thumbnails/Fuga.png");
+    background-image: url("../assets/thumbnails/Fuga.png");
 }
 
 #game8:not(#game8:hover){
-    background-image: url("../imgs/thumbnails/BulletHeaven.png");
+    background-image: url("../assets/thumbnails/BulletHeaven.png");
 }
 
 #game9:not(#game9:hover){
-    background-image: url("../imgs/thumbnails/BAM.png");
+    background-image: url("../assets/thumbnails/BAM.png");
 }
 
 #game10:not(#game10:hover){
-    background-image: url("../imgs/thumbnails/GarbageDay.png");
+    background-image: url("../assets/thumbnails/GarbageDay.png");
 }
 
 #game11:not(#game11:hover){
-    background-image: url("../imgs/thumbnails/ShaonjiKick.png");
+    background-image: url("../assets/thumbnails/ShaonjiKick.png");
 }
 
 #game12:not(#game12:hover){
-    background-image: url("../imgs/thumbnails/NoLight.png");
+    background-image: url("../assets/thumbnails/NoLight.png");
 }
 
 footer{
