@@ -3,14 +3,14 @@ var firstMoney = true;
 var firstPower = true;
 var money = 0;
 var duendes = 0;
-var duendePower = 0.01;
+var duendePower = 0.2;
 var styleMax = 5;
 var styleLvls = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 /* power costs */
 var initialLoadCost = 5
 var header1Cost = 20
 var header2Cost = 200
-var header3Cost = 2000
+var header3Cost = 20
 var introText1Cost = 40
 var introText2Cost = 400
 var introText3Cost = 4000
@@ -63,6 +63,7 @@ var duendeCost = 1
 var duendeCostIncrease = 1
 var styleCost = 10
 var styleCostIncrease = 20
+var delay = 50
 
 setInterval(step,100)
 
@@ -70,6 +71,17 @@ function step(){
     duendeShovel();
     meterUpdate();
     updateCosts();
+    doDelay();
+}
+
+function doDelay(){
+    if (delay >= 0){
+        delay --;
+    }
+    if (delay == 0){
+        alert("HAY QUE ECHARLE CARBÓN A LA MÁQUINA!!!!!!")
+    }
+
 }
 
 function buyStyle(index){
@@ -114,8 +126,14 @@ function unCarbon(){
         var main = document.querySelector("#main-body");
         main.innerHTML =  "<img src='assets/loading.gif' style='margin-left: 25%; width: 50%'><button onclick='initialLoad()'>Cargar! ("+initialLoadCost+" HP)</button>"
     }
-    power = power+1000000;
+    power = power+1;
     meterUpdate();
+}
+
+function CHEATS(){
+    power = power+10000000
+    money = money+10000000
+    duendes = duendes+100000000
 }
 
 function duendeShovel(){
@@ -251,6 +269,7 @@ function updateCosts(){
 
 function getMoney(){
     money += power * exchangeRate;
+    money = Number(money.toFixed(2))
     power = 0;
     if (firstMoney){
         firstMoney = false;
@@ -266,6 +285,7 @@ function hireDuende(){
     if (money >= duendeCost){
         duendes++;
         money -= duendeCost;
+        money = Number(money.toFixed(2))
         duendeCost += Math.floor(duendeCostIncrease);
         duendeCostIncrease *= 1.1;
     }
