@@ -1,0 +1,142 @@
+/* Reset and base ugliness */
+.style3 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+/* Body: readable font size, weird spacing */
+body.style3 {
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 1.2px;
+    word-spacing: 4px;
+    background-image: repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(0, 0, 0, 0.05) 10px, rgba(0, 0, 0, 0.05) 20px);
+}
+
+/* Main body warped box */
+#main-body.style3 {
+    padding: 2rem;
+    margin: 3rem;
+    border: 10px double currentColor;
+    transform: rotate(-1.5deg);
+}
+
+/* Header animations */
+header.style3 h1 {
+    font-size: 4rem;
+    animation: bounce 1.5s infinite alternate ease-in-out;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px) scale(1.05); }
+}
+
+header.style3 h2 {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2rem;
+    border: 3px dashed currentColor;
+    padding: 1rem;
+    transform: skewX(-5deg);
+}
+
+/* Main chaos */
+main.style3 {
+    padding: 3rem;
+    transform: scale(1.01) rotate(0.3deg);
+}
+
+article.style3 {
+    margin: 2rem 0;
+    padding: 2rem;
+    border: 6px ridge currentColor;
+    transform: rotate(0.7deg) scale(1.01);
+    font-size: 1rem;
+    max-width: 100%;
+}
+
+article.style3 h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-decoration: underline wavy currentColor;
+}
+
+article.style3 p {
+    margin-bottom: 1rem;
+}
+
+article.style3 img {
+    width: 100%;
+    max-width: 100%;
+    border: 5px inset currentColor;
+    filter: contrast(1.2) brightness(1.1);
+    transform: skewY(2deg);
+}
+
+/* Link jank */
+.style3 a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid currentColor;
+    text-decoration: none;
+    transform: scale(1) rotate(1deg);
+    transition: transform 0.1s ease-in-out;
+}
+
+.style3 a:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* Footer sadness */
+footer.style3 {
+    text-align: center;
+    padding: 4rem;
+    font-style: italic;
+    border-top: 8px dashed currentColor;
+    transform: rotate(-0.5deg);
+}
+
+/* Sidebar nav */
+nav.style3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 180px;
+    height: 100%;
+    border-right: 10px double currentColor;
+    overflow-y: auto;
+}
+
+nav.style3 ul {
+    list-style-type: square;
+    padding: 2rem;
+}
+
+nav.style3 li {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 2px dotted currentColor;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+/* Scrollbar style - grayscale only */
+::-webkit-scrollbar {
+    width: 16px;
+}
+::-webkit-scrollbar-track {
+    background: #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background: #666;
+    border: 3px solid #999;
+}

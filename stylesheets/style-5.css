@@ -1,9 +1,9 @@
-body{
+body.style5{
     width:80%;
     margin-left: 10%
 }
 
-nav{
+nav.style5{
     width: 15%;
     margin-top: 10px;
     float: left;
@@ -12,7 +12,7 @@ nav{
     position: fixed
 }
 
-#main-body{
+#main-body.style5{
     border: solid 2px;
     border-radius: 20px;
     width: 80%;
@@ -21,43 +21,43 @@ nav{
     overflow: hidden
 }
 
-header{
+header.style5{
     border-bottom: solid 2px;
     overflow: hidden
 }
 
-h1, h2{
+.style5 h1, .style5 h2{
     text-align: center;
     font-family: Copperplate, Helvetica, Verdana, Fantasy;
 }
 
-h1{
+.style5 h1{
     font-size: 65px;
 }
 
-h2{
+.style5 h2{
     font-size: 35px
 }
 
-h3{
+.style5 h3{
     text-align: center;
     font-family: Copperplate, Helvetica, Verdana, Fantasy;
     font-size: 50px
 }
 
-h4{
+.style5 h4{
     font-size: 30px;
     margin-bottom: 5px;
     margin-top: 15px
 }
 
-.clearfix::after {
+.style5.clearfix::after {
     content: "";
     clear: both;
     display: table;
 }
 
-main{
+main.style5{
     overflow: hidden;
     font-size: 20px;
     padding-left: 10px;
@@ -65,7 +65,7 @@ main{
     text-align: center
 }
 
-article{
+article.style5{
     float: left;
     border-style: solid;
     border-width:  2px;
@@ -80,7 +80,7 @@ article{
     transition: 0.25s;
 }
 
-article p{
+article.style5 p{
     font-size: 15px;
     margin-left: 15px;
     margin-right: 15px;
@@ -89,7 +89,7 @@ article p{
     text-align: justify;
 }
 
-article a,article button{
+article.style5 a,article.style5 button{
     font-size: 15px;
     opacity: 0;
     text-decoration-line: none;
@@ -101,13 +101,13 @@ article a,article button{
 }
 
 
-article:hover{
+article.style5:hover{
     background-image: none;
     color: black;
     transition: 0.5s;
 }
 
-article img{
+article.style5 img{
     border-radius: 10px;
     width: 95%;
     opacity: 0.0;
@@ -115,12 +115,12 @@ article img{
     transition: 0.1s;
 }
 
-article:hover img{
+article.style5:hover img{
     transition: 0.5s;
     opacity: 1.0
 }
 
-article:hover a,article:hover button{
+article.style5:hover a,article.style5:hover button{
     text-decoration-line: none;
     transition: 0.5s;
     opacity: 1.0;
@@ -131,55 +131,55 @@ article:hover a,article:hover button{
     border-radius: 5px
 }
 
-#game1:not(#game1:hover){
+#game1.style5:not(#game1.style5:hover){
     background-image: url("../assets/thumbnails/KuriKuri.png");
 }
 
-#game2:not(#game2:hover){
+#game2.style5:not(#game2.style5:hover){
     background-image: url("../assets/thumbnails/Topsi.png");
 }
 
-#game3:not(#game3:hover){
+#game3.style5:not(#game3.style5:hover){
     background-image: url("../assets/thumbnails/DESTROYRED.png");
 }
 
-#game4:not(#game4:hover){
+#game4.style5:not(#game4.style5:hover){
     background-image: url("../assets/thumbnails/BosseBoll.png");
 }
 
-#game5:not(#game5:hover){
+#game5.style5:not(#game5.style5:hover){
     background-image: url("../assets/thumbnails/OfEndlessCreativity.png");
 }
 
-#game6:not(#game6:hover){
+#game6.style5:not(#game6.style5:hover){
     background-image: url("../assets/thumbnails/PrimeCut.png");
 }
 
-#game7:not(#game7:hover){
+#game7.style5:not(#game7.style5:hover){
     background-image: url("../assets/thumbnails/Fuga.png");
 }
 
-#game8:not(#game8:hover){
+#game8.style5:not(#game8.style5:hover){
     background-image: url("../assets/thumbnails/BulletHeaven.png");
 }
 
-#game9:not(#game9:hover){
+#game9.style5:not(#game9.style5:hover){
     background-image: url("../assets/thumbnails/BAM.png");
 }
 
-#game10:not(#game10:hover){
+#game10.style5:not(#game10.style5:hover){
     background-image: url("../assets/thumbnails/GarbageDay.png");
 }
 
-#game11:not(#game11:hover){
+#game11.style5:not(#game11.style5:hover){
     background-image: url("../assets/thumbnails/ShaonjiKick.png");
 }
 
-#game12:not(#game12:hover){
+#game12.style5:not(#game12.style5:hover){
     background-image: url("../assets/thumbnails/NoLight.png");
 }
 
-footer{
+footer.style5{
     border-top: solid 2px;
     overflow: hidden
 }

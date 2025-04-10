@@ -1,134 +1,134 @@
 /* Basic reset */
-* {
+.style2 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* Body Styles */
-body {
+body.style2 {
     background-color: #dcdcdc; /* Grayish background (meh) */
     font-family: 'Times New Roman', serif; /* Trying to look classic but ends up feeling dated */
     color: #333; /* Dark text but not really readable on this background */
 }
 
 /* Navigation Styles */
-nav {
+nav.style2 {
     background-color: #ff0; /* Bright yellow for the navbar */
     padding: 20px;
     text-align: left; /* Unnecessarily left-aligned text */
 }
 
-nav ul {
+nav.style2 ul {
     list-style-type: none;
     font-size: 18px;
     margin-left: 50px; /* Awkward left indentation */
 }
 
-nav ul li {
+nav.style2 ul li {
     margin-bottom: 15px; /* Too much vertical space between items */
 }
 
-nav ul li a {
+nav.style2 ul li a {
     color: #00f; /* Blue links that contrast too harshly with yellow */
     text-decoration: none;
 }
 
-nav ul li a:hover {
+nav.style2 ul li a:hover {
     color: #f00; /* Red on hover that makes it hard to read */
 }
 
 /* Header Styles */
-header {
+header.style2 {
     text-align: center;
     margin-top: 60px; /* Uncomfortably large margin at the top */
 }
 
-header h1 {
+header.style2 h1 {
     font-size: 4rem; /* Giant text that’s hard to fit in a single line */
     color: #000; /* Black text, because why not */
     margin-bottom: 20px; /* Unnecessary space below */
 }
 
-header h2 {
+header.style2 h2 {
     font-size: 1.2rem; /* Way too small for a subtitle */
     color: #666; /* Dull gray that blends too much into the background */
     line-height: 1.5; /* Slightly too spaced out */
 }
 
 /* Main Body Styling */
-#main-body {
+#main-body.style2 {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 10px; /* Padding that's too tight on the sides */
 }
 
 /* Main Section Titles */
-main h3 {
+main.style2 h3 {
     font-size: 3rem; /* Too big for a small subtitle */
     margin-bottom: 40px; /* Overkill margin, no need for so much space */
     text-align: left; /* Left-aligned makes it feel awkward with a centered header */
 }
 
 /* Paragraph Styles */
-main p {
+main.style2 p {
     font-size: 1.1rem;
     margin-bottom: 30px; /* More vertical space that clutters things */
 }
 
 /* Article Styles */
-article {
+article.style2 {
     background-color: #f5f5f5; /* Light gray is too bland */
     border: 2px solid #bbb; /* Boring border that adds nothing */
     padding: 15px;
     margin-bottom: 40px; /* Too much space between articles */
 }
 
-article h4 {
+article.style2 h4 {
     font-size: 2rem; /* Too large for a subheading */
     color: #111; /* Slightly too dark, not easy to read */
     margin-bottom: 10px;
 }
 
-article p {
+article.style2 p {
     font-size: 1.2rem; /* Slightly too big for a paragraph */
     margin-bottom: 15px;
 }
 
-article img {
+article.style2 img {
     width: 100%; /* Oversized image */
     height: auto;
     border: 5px solid #333; /* Harsh black border that doesn't match the rest */
 }
 
 /* Footer Styles */
-footer {
+footer.style2 {
     background-color: #999; /* Dull gray footer that blends with the background */
     color: #fff; /* White text on gray — hard to read */
     padding: 20px;
     text-align: center;
 }
 
-footer p {
+footer.style2 p {
     font-size: 1rem;
 }
 
 /* Inconsistent Font Sizes */
-h1, h2, h3, h4, p {
+.style2 h1, h2, h3, h4, p {
     font-size: 1.4rem; /* Confusing mix of font sizes */
 }
 
 /* Random Overuse of Margins and Padding */
-h1, h2, h3, h4, p {
+.style2 h1, .style2 h2, .style2 h3, .style2 h4, .style2 p {
     margin-bottom: 10px; /* Every element has a random bottom margin */
 }
 
-h1 {
+.style2 h1 {
     margin-top: 100px; /* Unnecessary top margin */
 }
 
 /* Overcomplicated Colors */
-h3 {
+.style2 h3 {
     color: #ff0000; /* Bright red that doesn't work with the background */
 }
 

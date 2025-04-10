@@ -1,10 +1,19 @@
 var power = 0;
+var firstMoney = true;
 var firstPower = true;
+var money = 0;
+var duendes = 0;
+var duendePower = 0.01;
+var styleMax = 5;
+var styleLvls = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 /* power costs */
 var initialLoadCost = 5
 var header1Cost = 20
 var header2Cost = 200
 var header3Cost = 2000
+var introText1Cost = 40
+var introText2Cost = 400
+var introText3Cost = 4000
 var game1_1Cost = 50
 var game1_2Cost = 500
 var game1_3Cost = 5000
@@ -49,12 +58,53 @@ var game11_1Cost =  350
 var game11_2Cost = 3500
 var game11_3Cost = 35000
 var game11_4Cost = 35000
+var exchangeRate = 0.1
+var duendeCost = 1
+var duendeCostIncrease = 1
+var styleCost = 10
+var styleCostIncrease = 20
 
-setInterval(step,0.5)
+setInterval(step,100)
 
 function step(){
+    duendeShovel();
     meterUpdate();
     updateCosts();
+}
+
+function buyStyle(index){
+    var selector;
+    if ((index >= 0)&&(index <=10)){
+        selector = "#game" + (index+1)
+    }else if (index == 11){
+        selector = "header"
+    }else if (index == 12){
+        selector = "body,#main-body,main"
+    }else if (index == 13){
+        selector = "footer"
+    }else if (index == 14){
+        selector = "nav"
+    }
+    if (styleLvls[index] < styleMax){
+        if (money >= styleCost){
+            money -= styleCost;
+            styleCost += styleCostIncrease;
+            styleCostIncrease *= 1.01;
+            var selecteds = document.querySelectorAll(selector);
+            selecteds.forEach((selected) => {
+                if (styleLvls[index] != 0){
+                    selected.classList.remove("style"+styleLvls[index])
+                    }
+                selected.classList.add("style"+(styleLvls[index]+1))
+            });
+            styleLvls[index]++;
+            console.log(styleLvls[index]);
+            console.log(styleMax);
+            if (styleLvls[index] >= styleMax){
+                document.querySelector("#Button"+index).remove();
+            }
+        }
+    }
 }
 
 /*hecharle un solo carbon a la maquina*/
@@ -67,19 +117,42 @@ function unCarbon(){
     power = power+1000000;
     meterUpdate();
 }
-s
+
+function duendeShovel(){
+    power += duendes * duendePower;
+}
+
 function meterUpdate(){
     var meter = document.querySelector("#Power-Meter");
-    meter.innerHTML = power + "HP (Caballos de Fuerza)"
+    meter.innerHTML = power.toFixed(2) + "HP (Caballos de Fuerza)";
+    var meter = document.querySelector("#Money-Meter");
+    if (money == 0){
+        meter.innerHTML = ""
+    }else{
+        meter.innerHTML = "$"+money
+    }
+    var meter = document.querySelector("#Duende-Meter");
+    if (duendes == 0){
+        meter.innerHTML = ""
+    }else{
+        meter.innerHTML = duendes + " Duendes Contratados. "
+        meter.innerHTML += "(Generan "+ (duendes * duendePower * 10).toFixed(2) + "HP/segundo)"
+    }
 }
 
 function updateCosts(){
     var cost = document.querySelector("#header1cost")
     if (cost != null){cost.innerHTML = header1Cost;}
-    cost = document.querySelector("#header2cost")
+    var cost = document.querySelector("#header2cost")
     if (cost != null){cost.innerHTML = header2Cost;}
     var cost = document.querySelector("#header3cost")
     if (cost != null){cost.innerHTML = header3Cost;}
+    var cost = document.querySelector("#introtext1cost")
+    if (cost != null){cost.innerHTML = introText1Cost;}
+    var cost = document.querySelector("#introtext2cost")
+    if (cost != null){cost.innerHTML = introText2Cost;}
+    var cost = document.querySelector("#introtext3cost")
+    if (cost != null){cost.innerHTML = introText3Cost;}
     var cost = document.querySelector("#game1_1Cost")
     if (cost != null){cost.innerHTML = game1_1Cost;}
     var cost = document.querySelector("#game1_2Cost")
@@ -168,16 +241,52 @@ function updateCosts(){
     if (cost != null){cost.innerHTML = game11_2Cost;}
     var cost = document.querySelector("#game11_4Cost")
     if (cost != null){cost.innerHTML = game11_4Cost;}
+    var cost = document.querySelector("#exchange-rate")
+    if (cost != null){cost.innerHTML = exchangeRate;}
+    var cost = document.querySelector("#duende-cost")
+    if (cost != null){cost.innerHTML = duendeCost;}
+    var cost = document.querySelector("#StyleCost")
+    if (cost != null){cost.innerHTML = styleCost.toFixed(2);}
 }
 
+function getMoney(){
+    money += power * exchangeRate;
+    power = 0;
+    if (firstMoney){
+        firstMoney = false;
+        var nav = document.querySelector("nav");
+        nav.innerHTML += "<button onClick='hireDuende()'> Contratar a un duende! ($<span id='duende-cost'>__</span>)</button>"
+        nav.innerHTML += "<button onclick='buyStyle(12)' id='Button12'>Mejorar estilo del cuerpo de la pagina!</button>"
+        nav.innerHTML += "<button onclick='buyStyle(14)' id='Button14'>Mejorar estilo de esta parte!</button>"
+        nav.innerHTML += "<p>Mejorar estilos cuesta $<span id='StyleCost'>__</span></p>"
+    }
+}
+
+function hireDuende(){
+    if (money >= duendeCost){
+        duendes++;
+        money -= duendeCost;
+        duendeCost += Math.floor(duendeCostIncrease);
+        duendeCostIncrease *= 1.1;
+    }
+}
+
+// #region content loaders 
 function initialLoad(){
     var main = document.querySelector("#main-body");
-    spendToFill("power", initialLoadCost, main, "fillerhtmls/filled-body.html");
+    if (spendToFill("power", initialLoadCost, main, "fillerhtmls/filled-body.html")){
+        var nav = document.querySelector("nav");
+        nav.innerHTML += "<button onClick='getMoney()'>Convertir el poder en dinero! ($<span id='exchange-rate'>__</span> por HP)</button>";
+    }
+
 }
 
 function loadHeader1(){
     var header = document.querySelector("header");
-    spendToFill("power", header1Cost, header, "fillerhtmls/headers/header-1.html")
+    if (spendToFill("power", header1Cost, header, "fillerhtmls/headers/header-1.html")){
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(11)' id='Button11'>Mejorar estilo del Header!</button>"
+    }
 }
 
 function loadHeader2(){
@@ -190,11 +299,28 @@ function loadHeader3(){
     spendToFill("power", header3Cost, header, "fillerhtmls/headers/header-3.html");
 }
 
+function loadIntro1(){
+    var intro = document.querySelector("#introSpace");
+    spendToFill("power", introText1Cost, intro, "fillerhtmls/introtext/intro-1.html")
+}
+
+function loadIntro2(){
+    var intro = document.querySelector("#introSpace");
+    spendToFill("power", introText2Cost, intro, "fillerhtmls/introtext/intro-2.html")
+}
+
+function loadIntro3(){
+    var intro = document.querySelector("#introSpace");
+    spendToFill("power", introText3Cost, intro, "fillerhtmls/introtext/intro-3.html")
+}
+
 function loadGame1_1(){
     var game1 = document.querySelector("#game1");
     if (spendToFill("power", game1_1Cost, game1, "fillerhtmls/games/game1/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game2/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(0)' id='Button0'>Mejorar estilo del Juego 1!</button>"
     }
 }
 
@@ -218,6 +344,8 @@ function loadGame2_1(){
     if (spendToFill("power", game2_1Cost, game2, "fillerhtmls/games/game2/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game3/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(1)' id='Button1'>Mejorar estilo del Juego 2!</button>"
     }
 }
 
@@ -241,6 +369,8 @@ function loadGame3_1(){
     if (spendToFill("power", game3_1Cost, game3, "fillerhtmls/games/game3/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game4/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(2)' id='Button2'>Mejorar estilo del Juego 3!</button>"
     }
 }
 
@@ -264,6 +394,8 @@ function loadGame4_1(){
     if (spendToFill("power", game4_1Cost, game4, "fillerhtmls/games/game4/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game5/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(3)' id='Button3'>Mejorar estilo del Juego 4!</button>"
     }
 }
 
@@ -287,6 +419,8 @@ function loadGame5_1(){
     if (spendToFill("power", game5_1Cost, game5, "fillerhtmls/games/game5/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game6/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(4)' id='Button4'>Mejorar estilo del Juego 5!</button>"
     }
 }
 
@@ -310,6 +444,8 @@ function loadGame6_1(){
     if (spendToFill("power", game6_1Cost, game6, "fillerhtmls/games/game6/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game7/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(5)' id='Button5'>Mejorar estilo del Juego 6!</button>"
     }
 }
 
@@ -333,6 +469,8 @@ function loadGame7_1(){
     if (spendToFill("power", game7_1Cost, game7, "fillerhtmls/games/game7/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game8/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(6)' id='Button6'>Mejorar estilo del Juego 7!</button>"
     }
 }
 
@@ -356,6 +494,8 @@ function loadGame8_1(){
     if (spendToFill("power", game8_1Cost, game8, "fillerhtmls/games/game8/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game9/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(7)' id='Button7'>Mejorar estilo del Juego 8!</button>"
     }
 }
 
@@ -379,6 +519,8 @@ function loadGame9_1(){
     if (spendToFill("power", game9_1Cost, game9, "fillerhtmls/games/game9/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game10/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(8)' id='Button8'>Mejorar estilo del Juego 9!</button>"
     }
 }
 
@@ -402,6 +544,8 @@ function loadGame10_1(){
     if (spendToFill("power", game10_1Cost, game10, "fillerhtmls/games/game10/name-only.html")){
         var body = document.querySelector("main");
         addFromFile(body,"fillerhtmls/games/game11/starter.html")
+        var nav = document.querySelector("nav")
+        nav.innerHTML += "<button onclick='buyStyle(9)' id='Button9'>Mejorar estilo del Juego 10!</button>"
     }
 }
 
@@ -423,6 +567,8 @@ function loadGame10_4(){
 function loadGame11_1(){
     var game11 = document.querySelector("#game11");
     spendToFill("power", game11_1Cost, game11, "fillerhtmls/games/game11/name-only.html")
+    var nav = document.querySelector("nav")
+    nav.innerHTML += "<button onclick='buyStyle(10)' id='Button10'>Mejorar estilo del Juego 11!</button>"
 }
 
 function loadGame11_2(){
@@ -439,6 +585,7 @@ function loadGame11_4(){
     var game11 = document.querySelector("#game11");
     spendToFill("power", game11_3Cost, game11, "fillerhtmls/games/game11/full.html");
 }
+// #endregion
 
 function spendToFill(resource, cost, selected, fileURL){
     if (spend(resource, cost)){

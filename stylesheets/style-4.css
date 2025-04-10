@@ -1,0 +1,149 @@
+/* self-style.css — MySpace-core layout */
+
+.style4 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.style4 {
+    font-family: "Verdana", "Tahoma", sans-serif;
+    font-size: 14px;
+    background-image: url('../assets/bg-tile.gif'); /* optional tiled bg texture */
+    background-repeat: repeat;
+    background-attachment: fixed;
+    line-height: 1.5;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+/* Sidebar nav */
+nav.style4 {
+    width: 180px;
+    min-width: 140px;
+    border: 2px outset;
+    padding: 10px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+nav.style4 ul {
+    list-style-type: square;
+    margin-left: 10px;
+}
+
+nav.style4 li {
+    margin: 10px 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Main content */
+#main-body.style4 {
+    flex: 1;
+    max-width: 900px;
+    border: 3px double;
+    padding: 20px;
+    background: transparent;
+}
+
+/* Header */
+header.style4 {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed;
+    padding-bottom: 10px;
+}
+
+header.style4 h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0px;
+    margin-bottom: 10px;
+}
+
+header.style4 h2 {
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* Main layout */
+main.style4 h3 {
+    font-size: 22px;
+    border-bottom: 2px dotted;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+article.style4 {
+    border: 2px groove;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+article.style4 h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+article.style4 p {
+    margin: 5px 0;
+}
+
+article.style4 img {
+    display: block;
+    margin: 10px auto;
+    max-width: 100%;
+    border: 2px inset;
+}
+
+/* Links */
+.style4 a {
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+}
+
+.style4 a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer.style4 {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    border-top: 1px dashed;
+    padding-top: 10px;
+}
+
+/* Special effects */
+.style4.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Wacky 2000s-style animated title */
+.style4 #letter1, .style4 #letter2, .style4 #letter3, .style4 #letter4, .style4 #letter5 {
+    display: inline-block;
+    animation: bounce 1s infinite ease-in-out alternate;
+}
+
+.style4 #letter2 { animation-delay: 0.1s; }
+.style4 #letter3 { animation-delay: 0.2s; }
+.style4 #letter4 { animation-delay: 0.3s; }
+.style4 #letter5 { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-8px); }
+}
