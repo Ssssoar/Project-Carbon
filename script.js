@@ -64,7 +64,7 @@ function unCarbon(){
         var main = document.querySelector("#main-body");
         main.innerHTML =  "<img src='assets/loading.gif' style='margin-left: 25%; width: 50%'><button onclick='initialLoad()'>Cargar! ("+initialLoadCost+" HP)</button>"
     }
-    power = power+2000000;
+    power = power+1000000;
     meterUpdate();
 }
 s
@@ -192,7 +192,10 @@ function loadHeader3(){
 
 function loadGame1_1(){
     var game1 = document.querySelector("#game1");
-    spendToFill("power", game1_1Cost, game1, "fillerhtmls/games/game1/name-only.html");
+    if (spendToFill("power", game1_1Cost, game1, "fillerhtmls/games/game1/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game2/starter.html")
+    }
 }
 
 function loadGame1_2(){
@@ -212,7 +215,10 @@ function loadGame1_4(){
 
 function loadGame2_1(){
     var game1 = document.querySelector("#game2");
-    spendToFill("power", game2_1Cost, game2, "fillerhtmls/games/game2/name-only.html");
+    if (spendToFill("power", game2_1Cost, game2, "fillerhtmls/games/game2/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game3/starter.html")
+    }
 }
 
 function loadGame2_2(){
@@ -232,7 +238,10 @@ function loadGame2_4(){
 
 function loadGame3_1(){
     var game3 = document.querySelector("#game3");
-    spendToFill("power", game3_1Cost, game3, "fillerhtmls/games/game3/name-only.html");
+    if (spendToFill("power", game3_1Cost, game3, "fillerhtmls/games/game3/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game4/starter.html")
+    }
 }
 
 function loadGame3_2(){
@@ -252,7 +261,10 @@ function loadGame3_4(){
 
 function loadGame4_1(){
     var game4 = document.querySelector("#game4");
-    spendToFill("power", game4_1Cost, game4, "fillerhtmls/games/game4/name-only.html");
+    if (spendToFill("power", game4_1Cost, game4, "fillerhtmls/games/game4/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game5/starter.html")
+    }
 }
 
 function loadGame4_2(){
@@ -272,7 +284,10 @@ function loadGame4_4(){
 
 function loadGame5_1(){
     var game5 = document.querySelector("#game5");
-    spendToFill("power", game5_1Cost, game5, "fillerhtmls/games/game5/name-only.html");
+    if (spendToFill("power", game5_1Cost, game5, "fillerhtmls/games/game5/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game6/starter.html")
+    }
 }
 
 function loadGame5_2(){
@@ -292,7 +307,10 @@ function loadGame5_4(){
 
 function loadGame6_1(){
     var game6 = document.querySelector("#game6");
-    spendToFill("power", game6_1Cost, game6, "fillerhtmls/games/game6/name-only.html");
+    if (spendToFill("power", game6_1Cost, game6, "fillerhtmls/games/game6/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game7/starter.html")
+    }
 }
 
 function loadGame6_2(){
@@ -312,7 +330,10 @@ function loadGame6_4(){
 
 function loadGame7_1(){
     var game7 = document.querySelector("#game7");
-    spendToFill("power", game7_1Cost, game7, "fillerhtmls/games/game7/name-only.html");
+    if (spendToFill("power", game7_1Cost, game7, "fillerhtmls/games/game7/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game8/starter.html")
+    }
 }
 
 function loadGame7_2(){
@@ -332,7 +353,10 @@ function loadGame7_4(){
 
 function loadGame8_1(){
     var game8 = document.querySelector("#game8");
-    spendToFill("power", game8_1Cost, game8, "fillerhtmls/games/game8/name-only.html");
+    if (spendToFill("power", game8_1Cost, game8, "fillerhtmls/games/game8/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game9/starter.html")
+    }
 }
 
 function loadGame8_2(){
@@ -352,7 +376,10 @@ function loadGame8_4(){
 
 function loadGame9_1(){
     var game9 = document.querySelector("#game9");
-    spendToFill("power", game9_1Cost, game9, "fillerhtmls/games/game9/name-only.html");
+    if (spendToFill("power", game9_1Cost, game9, "fillerhtmls/games/game9/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game10/starter.html")
+    }
 }
 
 function loadGame9_2(){
@@ -372,7 +399,10 @@ function loadGame9_4(){
 
 function loadGame10_1(){
     var game10 = document.querySelector("#game10");
-    spendToFill("power", game10_1Cost, game10, "fillerhtmls/games/game10/name-only.html");
+    if (spendToFill("power", game10_1Cost, game10, "fillerhtmls/games/game10/name-only.html")){
+        var body = document.querySelector("main");
+        addFromFile(body,"fillerhtmls/games/game11/starter.html")
+    }
 }
 
 function loadGame10_2(){
@@ -392,7 +422,7 @@ function loadGame10_4(){
 
 function loadGame11_1(){
     var game11 = document.querySelector("#game11");
-    spendToFill("power", game11_1Cost, game11, "fillerhtmls/games/game11/name-only.html");
+    spendToFill("power", game11_1Cost, game11, "fillerhtmls/games/game11/name-only.html")
 }
 
 function loadGame11_2(){
@@ -412,8 +442,10 @@ function loadGame11_4(){
 
 function spendToFill(resource, cost, selected, fileURL){
     if (spend(resource, cost)){
-        fillFromFile(selected, fileURL)
+        fillFromFile(selected, fileURL);
+        return true;
     }
+    return false;
 }
 
 function spend(resource, cost){
@@ -438,5 +470,13 @@ function fillFromFile(selected,fileURL) {
     .then(response => response.text())
     .then(textString => {
         selected.innerHTML = textString;
+    });
+}
+
+function addFromFile(selected,fileURL){
+    fetch(fileURL)
+    .then(response => response.text())
+    .then(textString => {
+        selected.innerHTML += textString;
     });
 }
