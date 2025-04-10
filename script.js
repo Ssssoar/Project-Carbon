@@ -67,6 +67,7 @@ var delay = 50
 
 setInterval(step,100)
 
+//update cycle function
 function step(){
     duendeShovel();
     meterUpdate();
@@ -74,6 +75,7 @@ function step(){
     doDelay();
 }
 
+//shoot an alert after 5 seconds
 function doDelay(){
     if (delay >= 0){
         delay --;
@@ -84,8 +86,10 @@ function doDelay(){
 
 }
 
+//whenever you buy a new style this function is fired
 function buyStyle(index){
     var selector;
+    //selector of the html tags to change gets made
     if ((index >= 0)&&(index <=10)){
         selector = "#game" + (index+1)
     }else if (index == 11){
@@ -97,6 +101,7 @@ function buyStyle(index){
     }else if (index == 14){
         selector = "nav"
     }
+    //check what level of style we're on
     if (styleLvls[index] < styleMax){
         if (money >= styleCost){
             money -= styleCost;
@@ -119,7 +124,7 @@ function buyStyle(index){
     }
 }
 
-/*hecharle un solo carbon a la maquina*/
+//throw a single coal in the machine
 function unCarbon(){
     if (firstPower) {
         firstPower = false;
@@ -130,16 +135,19 @@ function unCarbon(){
     meterUpdate();
 }
 
+//click the o to get infinite money
 function CHEATS(){
     power = power+10000000
     money = money+10000000
     duendes = duendes+100000000
 }
 
+//run every cycle, increases the ammount of power depending on the ammount of duendes hired
 function duendeShovel(){
     power += duendes * duendePower;
 }
 
+//run every cycle, updates ammounts of money, it finds the correct places to place the numbers by using the ids that spans have
 function meterUpdate(){
     var meter = document.querySelector("#Power-Meter");
     meter.innerHTML = power.toFixed(2) + "HP (Caballos de Fuerza)";
@@ -158,6 +166,7 @@ function meterUpdate(){
     }
 }
 
+//finds spans to update them to the correct number for the cost of things
 function updateCosts(){
     var cost = document.querySelector("#header1cost")
     if (cost != null){cost.innerHTML = header1Cost;}
@@ -267,10 +276,12 @@ function updateCosts(){
     if (cost != null){cost.innerHTML = styleCost.toFixed(2);}
 }
 
+//turns your power into money
 function getMoney(){
     money += power * exchangeRate;
     money = Number(money.toFixed(2))
     power = 0;
+    //if this is the first money you're getting, spawns a bunch of buttons
     if (firstMoney){
         firstMoney = false;
         var nav = document.querySelector("nav");
@@ -281,6 +292,7 @@ function getMoney(){
     }
 }
 
+//hire a duende to shovel money for you
 function hireDuende(){
     if (money >= duendeCost){
         duendes++;
@@ -607,6 +619,8 @@ function loadGame11_4(){
 }
 // #endregion
 
+//pass it a resource, how much you're trying to spend, a selection in the DOM and a file, and it will check if you have enough of the given resource
+//and if so, it will spend it, and fill the DOM selection with the content from the file
 function spendToFill(resource, cost, selected, fileURL){
     if (spend(resource, cost)){
         fillFromFile(selected, fileURL);
@@ -615,6 +629,7 @@ function spendToFill(resource, cost, selected, fileURL){
     return false;
 }
 
+//give it a resource and a cost, and it will subtract the ammount of the resource if it's possible and return true, else false
 function spend(resource, cost){
     var toCheck;
     if (resource == "power"){
@@ -640,6 +655,7 @@ function fillFromFile(selected,fileURL) {
     });
 }
 
+//same as the previous but it appends rather than replacing
 function addFromFile(selected,fileURL){
     fetch(fileURL)
     .then(response => response.text())
